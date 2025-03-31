@@ -6,8 +6,9 @@ import string
 import json
 import math
 from datetime import datetime, timedelta
-import zxcvbn  # For advanced password strength analysis
-import plotly.graph_objects as go
+from zxcvbn import zxcvbn 
+
+import plotly.graph_objects as go 
 from collections import Counter
 
 # Common passwords list (you can expand this)
@@ -229,7 +230,7 @@ def calculate_entropy(password: str) -> float:
 
 def copy_to_clipboard(text: str) -> None:
     """Copy text to clipboard"""
-    pyperclip.copy(text)
+    pyperclip.copy(text) # type: ignore
 
 def get_time_to_crack(entropy: float) -> str:
     """Estimate time to crack based on entropy"""
